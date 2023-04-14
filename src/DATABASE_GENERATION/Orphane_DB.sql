@@ -55,3 +55,19 @@ CREATE TABLE IF NOT EXISTS Orphan.Adoptee_Details (
 
 INSERT INTO Orphan.Adoptee_Details (AD_NAME, AD_MOBILENO, AD_ADDRESS, ZIPCODE, AD_CITY, AD_OCCUPATION) 
 VALUES ('Jaydeep Sharma', '8547962135', '123, Main Street, Bangalore', '560001', 'Bangalore', 'Engineer');
+
+CREATE TABLE IF NOT EXISTS Orphan.UserCredentials (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    Fullname VARCHAR(50) NOT NULL,
+    Email VARCHAR(50) NOT NULL,
+    Mobileno VARCHAR(20) NOT NULL,
+    ADDRESS VARCHAR(100),
+    Auser VARCHAR(20) NOT NULL,
+    Password VARCHAR(20) NOT NULL,
+    ConfirmPass VARCHAR(20) NOT NULL
+);
+
+INSERT INTO Orphan.UserCredentials (Fullname, Email, Mobileno, ADDRESS, Auser, Password, ConfirmPass) 
+VALUES ('Roshan Khandagale','roshan15khandagale@gmail.com','7448255689','Gadge Nagar, Amravati','Admin','admin@123#','admin@123#');
+INSERT INTO Orphan.UserCredentials (Fullname, Email, Mobileno, ADDRESS, Auser, Password, ConfirmPass) 
+VALUES ('Sakshi Jomde', 'sakshijomde2002@gmail.com', '8600195612', 'Dastur Nagar, Amravati', 'Savi', 'password123', 'password123');
