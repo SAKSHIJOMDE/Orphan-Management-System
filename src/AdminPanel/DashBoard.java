@@ -1,6 +1,8 @@
 package AdminPanel;
 
 import UserInterface.MainMenu;
+import DatabaseDetails.AdopteeDView;
+import DatabaseDetails.OrphanDView;
 
 public class DashBoard extends javax.swing.JFrame {
 
@@ -18,6 +20,7 @@ public class DashBoard extends javax.swing.JFrame {
         OrphanDetailsB = new javax.swing.JButton();
         EXITB = new javax.swing.JButton();
         LogoutB = new javax.swing.JButton();
+        AdopteDetails = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,6 +78,16 @@ public class DashBoard extends javax.swing.JFrame {
             }
         });
 
+        AdopteDetails.setBackground(new java.awt.Color(255, 255, 255));
+        AdopteDetails.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        AdopteDetails.setText("Adoptee Details");
+        AdopteDetails.setBorder(null);
+        AdopteDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdopteDetailsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout MianPanelLayout = new javax.swing.GroupLayout(MianPanel);
         MianPanel.setLayout(MianPanelLayout);
         MianPanelLayout.setHorizontalGroup(
@@ -86,7 +99,8 @@ public class DashBoard extends javax.swing.JFrame {
                         .addGroup(MianPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(OrphanDetailsB, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AdopteeRegisteryB, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(OrphanRegisteryB, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(OrphanRegisteryB, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AdopteDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(MianPanelLayout.createSequentialGroup()
                         .addGap(356, 356, 356)
                         .addGroup(MianPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,17 +111,19 @@ public class DashBoard extends javax.swing.JFrame {
         MianPanelLayout.setVerticalGroup(
             MianPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MianPanelLayout.createSequentialGroup()
-                .addGap(109, 109, 109)
+                .addGap(49, 49, 49)
                 .addComponent(OrphanRegisteryB)
-                .addGap(30, 30, 30)
+                .addGap(20, 20, 20)
                 .addComponent(AdopteeRegisteryB)
-                .addGap(29, 29, 29)
+                .addGap(19, 19, 19)
                 .addComponent(OrphanDetailsB)
-                .addGap(98, 98, 98)
+                .addGap(18, 18, 18)
+                .addComponent(AdopteDetails)
+                .addGap(59, 59, 59)
                 .addComponent(LogoutB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(EXITB)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -131,11 +147,15 @@ public class DashBoard extends javax.swing.JFrame {
     }//GEN-LAST:event_OrphanRegisteryBActionPerformed
 
     private void AdopteeRegisteryBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdopteeRegisteryBActionPerformed
-        // TODO add your handling code here:
+        AdopteeRegistery ARes = new AdopteeRegistery();
+        ARes.setVisible(true);
+        dispose();
     }//GEN-LAST:event_AdopteeRegisteryBActionPerformed
 
     private void OrphanDetailsBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrphanDetailsBActionPerformed
-        // TODO add your handling code here:
+        OrphanDView OView = new OrphanDView();
+        OView.setVisible(true);
+        dispose();
     }//GEN-LAST:event_OrphanDetailsBActionPerformed
 
     private void EXITBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITBActionPerformed
@@ -147,6 +167,12 @@ public class DashBoard extends javax.swing.JFrame {
         menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_LogoutBActionPerformed
+
+    private void AdopteDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdopteDetailsActionPerformed
+        AdopteeDView AView = new AdopteeDView();
+        AView.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_AdopteDetailsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,6 +210,7 @@ public class DashBoard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AdopteDetails;
     private javax.swing.JButton AdopteeRegisteryB;
     private javax.swing.JButton EXITB;
     private javax.swing.JButton LogoutB;

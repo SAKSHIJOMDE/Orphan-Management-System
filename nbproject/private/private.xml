@@ -5,9 +5,10 @@
         <group>
             <file>file:/C:/Users/Roshan/Dropbox/PC/Documents/NetBeansProjects/OrphanManagementSystem/src/AdminPanel/OrphanRegister.java</file>
             <file>file:/C:/Users/Roshan/Dropbox/PC/Documents/NetBeansProjects/OrphanManagementSystem/src/AdminPanel/DashBoard.java</file>
-            <file>file:/C:/Users/Roshan/Dropbox/PC/Documents/NetBeansProjects/OrphanManagementSystem/src/AdminPanel/LoginForm.java</file>
+            <file>file:/C:/Users/Roshan/Dropbox/PC/Documents/NetBeansProjects/OrphanManagementSystem/src/DatabaseDetails/OrphanDView.java</file>
             <file>file:/C:/Users/Roshan/Dropbox/PC/Documents/NetBeansProjects/OrphanManagementSystem/src/UserInterface/MainMenu.java</file>
-            <file>file:/C:/Users/Roshan/Dropbox/PC/Documents/NetBeansProjects/OrphanManagementSystem/src/AdminPanel/ForgotPass.java</file>
+            <file>file:/C:/Users/Roshan/Dropbox/PC/Documents/NetBeansProjects/OrphanManagementSystem/src/AdminPanel/LoginForm.java</file>
+            <file>file:/C:/Users/Roshan/Dropbox/PC/Documents/NetBeansProjects/OrphanManagementSystem/src/DatabaseDetails/AdopteeDView.java</file>
         </group>
     </open-files>
 </project-private>
