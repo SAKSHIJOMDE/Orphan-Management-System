@@ -58,6 +58,7 @@ public class DashBoard extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         LoginForm log = new LoginForm();
         log.setVisible(true);
+        log.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
