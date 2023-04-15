@@ -39,13 +39,14 @@ public class LoginForm extends javax.swing.JFrame {
         MainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MainMenuB.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        MainMenuB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assests/home.png"))); // NOI18N
         MainMenuB.setText("Menu");
         MainMenuB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MainMenuBActionPerformed(evt);
             }
         });
-        MainPanel.add(MainMenuB, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, -1));
+        MainPanel.add(MainMenuB, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, -1));
 
         OrphanPanel.setBackground(new java.awt.Color(255, 255, 255));
         OrphanPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ORPHAN MANAGEMENT", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Rockwell Condensed", 1, 36))); // NOI18N
@@ -169,7 +170,7 @@ public class LoginForm extends javax.swing.JFrame {
                     .addGroup(OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(ShowPass)))
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LoginB)
                 .addGap(18, 18, 18)
                 .addGroup(OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,7 +242,9 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_ForgotPassBActionPerformed
 
     private void ExitBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitBActionPerformed
-        System.exit(0);
+        if (JOptionPane.showConfirmDialog(rootPane, "Are You Sure You Want To Exit?", "EXIT", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
+            System.exit(0);
+        }
     }//GEN-LAST:event_ExitBActionPerformed
 
     private void ShowPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowPassActionPerformed

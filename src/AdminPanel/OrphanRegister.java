@@ -1,5 +1,12 @@
 package AdminPanel;
 
+import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.PreparedStatement;
+import java.text.SimpleDateFormat;
+
 public class OrphanRegister extends javax.swing.JFrame {
 
     public OrphanRegister() {
@@ -95,6 +102,7 @@ public class OrphanRegister extends javax.swing.JFrame {
 
         SUBMIT.setBackground(new java.awt.Color(255, 255, 255));
         SUBMIT.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        SUBMIT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assests/sendadd.png"))); // NOI18N
         SUBMIT.setText("SUBMIT");
         SUBMIT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +113,7 @@ public class OrphanRegister extends javax.swing.JFrame {
         EXITB.setBackground(new java.awt.Color(255, 255, 255));
         EXITB.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         EXITB.setForeground(new java.awt.Color(255, 0, 0));
+        EXITB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assests/exit.png"))); // NOI18N
         EXITB.setText("EXIT");
         EXITB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -196,7 +205,7 @@ public class OrphanRegister extends javax.swing.JFrame {
                 .addGroup(MainPAnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SUBMIT)
                     .addComponent(EXITB))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -214,7 +223,29 @@ public class OrphanRegister extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SUBMITActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SUBMITActionPerformed
-        
+        try {
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Orphan","root","Root@123");
+            PreparedStatement pst = con.prepareStatement("");
+            pst.setString(1,ONAME.getText());
+            pst.setString(2, ADDRESS.getText());
+            pst.setString(3,CONTACT.getText());
+            pst.setString(4,EMAIL.getText());
+            SimpleDateFormat dateF = new SimpleDateFormat("yyyy-MM-dd");
+            String date = dateF.format(DATE.getDate());
+            pst.setString(5, date);
+            if(MALEF.isSelected()){
+                pst.setString(4,MALEF.getText());
+            }
+            if (FEMALEF.isSelected()){
+                pst.setString(4,FEMALEF.getText());
+            }
+            if(OTHERF.isSelected()){
+                pst.setString(4,OTHERF.getText());
+            }
+            pst.executeUpdate();
+        } catch (SQLException sql) {
+            JOptionPane.showMessageDialog(rootPane, sql);
+        }
     }//GEN-LAST:event_SUBMITActionPerformed
 
     private void EXITBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITBActionPerformed
