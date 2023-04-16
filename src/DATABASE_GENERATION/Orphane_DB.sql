@@ -8,15 +8,15 @@ CREATE DATABASE Orphan;
 CREATE TABLE IF NOT EXISTS Orphan.Orphan_Details (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     NAME VARCHAR(50) NOT NULL,
-    GENDER VARCHAR(10),
-    AGE INT,
-    SHORT_DES VARCHAR(150),
-    DESCRIPTION VARCHAR(300),
+    GENDER VARCHAR(10) NOT NULL,
+    AGE INT NOT NULL,
+    DESCRIPTION VARCHAR(300) NOT NULL,
+    PY_CHALLENGED VARCHAR(3) NOT NULL,
     ORPHAN_PARENTS VARCHAR(50)
 );
 
-INSERT INTO Orphan.Orphan_Details (NAME, GENDER, AGE, SHORT_DES, DESCRIPTION, ORPHAN_PARENTS) 
-VALUES ('Sanjay Singh', 'Male', 12, 'A happy and friendly boy', 'John is a very active and cheerful boy who loves playing soccer and spending time with his friends.', 'Unknown');
+INSERT INTO Orphan.Orphan_Details (ID, NAME, GENDER, AGE, DESCRIPTION, PY_CHALLENGED, ORPHAN_PARENTS) 
+VALUES (1, 'Sanjay Singh', 'MALE', 12, 'John is a very active and cheerful boy who loves playing soccer and spending time with his friends.', 'YES', 'Unknown');
 
 CREATE TABLE IF NOT EXISTS Orphan.Employee_Details (
     ID INT PRIMARY KEY AUTO_INCREMENT,

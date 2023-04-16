@@ -343,7 +343,7 @@ public class AdopteeRegistery extends javax.swing.JFrame {
                 CITY.setText(null);
                 OCCUPATION.setText(null);
         } catch (SQLException sql) {
-            JOptionPane.showMessageDialog(rootPane, "INCORRECT DATA ENTRED....");
+            JOptionPane.showMessageDialog(rootPane, sql);
         }
     }//GEN-LAST:event_SEARCHBActionPerformed
 
