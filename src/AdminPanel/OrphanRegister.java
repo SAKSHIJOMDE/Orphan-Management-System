@@ -1,5 +1,6 @@
 package AdminPanel;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -39,6 +40,8 @@ public class OrphanRegister extends javax.swing.JFrame {
         PARENT = new javax.swing.JTextField();
         YES = new javax.swing.JRadioButton();
         NO = new javax.swing.JRadioButton();
+        jLabel10 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,6 +113,11 @@ public class OrphanRegister extends javax.swing.JFrame {
         SUBMIT.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         SUBMIT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assests/sendadd.png"))); // NOI18N
         SUBMIT.setText("SUBMIT");
+        SUBMIT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SUBMITMouseClicked(evt);
+            }
+        });
         SUBMIT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SUBMITActionPerformed(evt);
@@ -151,6 +159,9 @@ public class OrphanRegister extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel10.setText("DATE OF BIRTH");
+
         javax.swing.GroupLayout MainPAnelLayout = new javax.swing.GroupLayout(MainPAnel);
         MainPAnel.setLayout(MainPAnelLayout);
         MainPAnelLayout.setHorizontalGroup(
@@ -169,16 +180,11 @@ public class OrphanRegister extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel9))))
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10))))
                 .addGap(30, 30, 30)
                 .addGroup(MainPAnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(EXITB)
-                    .addGroup(MainPAnelLayout.createSequentialGroup()
-                        .addComponent(MALEF)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(FEMALEF)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(OTHERF))
                     .addGroup(MainPAnelLayout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -190,7 +196,16 @@ public class OrphanRegister extends javax.swing.JFrame {
                     .addGroup(MainPAnelLayout.createSequentialGroup()
                         .addComponent(YES)
                         .addGap(18, 18, 18)
-                        .addComponent(NO)))
+                        .addComponent(NO))
+                    .addGroup(MainPAnelLayout.createSequentialGroup()
+                        .addGroup(MainPAnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(MainPAnelLayout.createSequentialGroup()
+                                .addComponent(MALEF)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(FEMALEF)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(OTHERF)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         MainPAnelLayout.setVerticalGroup(
@@ -211,10 +226,14 @@ public class OrphanRegister extends javax.swing.JFrame {
                     .addComponent(FEMALEF)
                     .addComponent(OTHERF))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(MainPAnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel10)
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(MainPAnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AGE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addGap(0, 8, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(MainPAnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MainPAnelLayout.createSequentialGroup()
                         .addComponent(jLabel3)
@@ -237,7 +256,7 @@ public class OrphanRegister extends javax.swing.JFrame {
                 .addGroup(MainPAnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SUBMIT)
                     .addComponent(EXITB))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -258,7 +277,7 @@ public class OrphanRegister extends javax.swing.JFrame {
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Orphan","root","Root@123");
             PreparedStatement pst = con.prepareStatement("");
-            
+            pst.setString(1, ID.getText());
             pst.executeUpdate();
         } catch (SQLException sql) {
             JOptionPane.showMessageDialog(rootPane, sql);
@@ -304,6 +323,10 @@ public class OrphanRegister extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_OTHERFActionPerformed
 
+    private void SUBMITMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SUBMITMouseClicked
+        SUBMIT.setBackground(Color.green);
+    }//GEN-LAST:event_SUBMITMouseClicked
+
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -334,7 +357,9 @@ public class OrphanRegister extends javax.swing.JFrame {
     private javax.swing.JTextField PARENT;
     private javax.swing.JButton SUBMIT;
     private javax.swing.JRadioButton YES;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
