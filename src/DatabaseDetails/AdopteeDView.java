@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import net.proteanit.sql.DbUtils;
@@ -414,6 +415,7 @@ public class AdopteeDView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void SEARCHBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SEARCHBActionPerformed
@@ -464,7 +466,37 @@ public class AdopteeDView extends javax.swing.JFrame {
     }//GEN-LAST:event_SEARCHBActionPerformed
 
     private void UPDATEBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UPDATEBActionPerformed
-        
+        if (JOptionPane.showConfirmDialog(rootPane, "Are You Sure You Want To UPDATE the Record?", "RECORD UPDATION?", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
+            try{
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Orphan","root","Root@123");
+                PreparedStatement stmt = con.prepareStatement("UPDATE Adoptee_Details SET ADOPTEENAME = ?, ADDRESS = ?, DESCRIPTION = ?, DOB = ?, GENDER = ?, PHONENO = ?, EMAIL = ?, ZIPCODE = ?, CITY = ? ,CCUPATION = ? ,WHERE ID = "+ IDF.getText());
+                stmt.setString(1,ANAMEF.getText());
+                stmt.setString(2,ADDRESSF.getText());
+                stmt.setString(3,DESF.getText());
+                SimpleDateFormat dateF = new SimpleDateFormat("yyyy-MM-dd");
+                String date = dateF.format(DATEF.getDate());
+                stmt.setString(4, date);
+                if (MALEF.isSelected() == true) {
+                    stmt.setString(5, MALEF.getText());
+                }
+                if(FEMALEF.isSelected() == true) {
+                    stmt.setString(5, MALEF.getText());
+                }
+                if (OTHERF.isSelected() == true) {
+                    stmt.setString(5, OTHERF.getText());
+                }
+                stmt.setString(6,PHONEF.getText());
+                stmt.setString(7,EMAILF.getText());
+                stmt.setString(8,ZIP.getText());
+                stmt.setString(9,CITY.getText());
+                stmt.setString(10,OCCUPATION.getText());
+                
+                stmt.executeUpdate();
+                JOptionPane.showMessageDialog(rootPane,"SUCCESSFULLY UPDATED THE RECORD!!");
+            }catch(SQLException sql){
+                JOptionPane.showMessageDialog(rootPane,"NO DATA FOND IN THE RECORDS");
+            }Fetch();
+         }
     }//GEN-LAST:event_UPDATEBActionPerformed
 
     private void DELETEBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DELETEBActionPerformed
@@ -510,7 +542,7 @@ public class AdopteeDView extends javax.swing.JFrame {
     }//GEN-LAST:event_REFRESHBActionPerformed
 
     private void CLOSEBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSEBActionPerformed
-        if (JOptionPane.showConfirmDialog(rootPane, "Are You Sure You Want To Exit?", "EXIT", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
+        if (JOptionPane.showConfirmDialog(rootPane, "Are You Sure You Want To Close?", "BACK TO MENU", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
             DashBoard dash = new DashBoard();
             dash.setVisible(true);
             dispose();

@@ -159,6 +159,7 @@ public class DashBoard extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void OrphanRegisteryBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrphanRegisteryBActionPerformed
@@ -186,9 +187,11 @@ public class DashBoard extends javax.swing.JFrame {
     }//GEN-LAST:event_EXITBActionPerformed
 
     private void LogoutBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBActionPerformed
-        MainMenu menu = new MainMenu();
-        menu.setVisible(true);
-        dispose();
+         if (JOptionPane.showConfirmDialog(rootPane, "Are You Sure You Want To LOGOUT?", "LOGOUT", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
+             MainMenu menu = new MainMenu();
+            menu.setVisible(true);
+            dispose();
+         }
     }//GEN-LAST:event_LogoutBActionPerformed
 
     private void AdopteDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdopteDetailsActionPerformed
@@ -198,7 +201,9 @@ public class DashBoard extends javax.swing.JFrame {
     }//GEN-LAST:event_AdopteDetailsActionPerformed
 
     private void OrphanRegisteryB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrphanRegisteryB1ActionPerformed
-        // TODO add your handling code here:
+        MainMenu menu = new MainMenu();
+        menu.setVisible(true);
+        dispose();
     }//GEN-LAST:event_OrphanRegisteryB1ActionPerformed
 
     /**

@@ -199,6 +199,7 @@ public class LoginForm extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginBActionPerformed
@@ -224,7 +225,7 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_LoginBActionPerformed
 
     private void RegisterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterBActionPerformed
-        OrphanRegister reg = new OrphanRegister();
+        AdminRegister reg = new AdminRegister();
         reg.setVisible(true);
         dispose();
     }//GEN-LAST:event_RegisterBActionPerformed

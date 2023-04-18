@@ -384,6 +384,7 @@ public class OrphanDView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void MALEFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MALEFActionPerformed

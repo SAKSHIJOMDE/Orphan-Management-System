@@ -37,7 +37,7 @@ public class AdopteeRegistery extends javax.swing.JFrame {
         MALEF = new javax.swing.JRadioButton();
         FEMALEF = new javax.swing.JRadioButton();
         OTHERF = new javax.swing.JRadioButton();
-        EXITB = new javax.swing.JButton();
+        BACK = new javax.swing.JButton();
         SEARCHB = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -112,14 +112,14 @@ public class AdopteeRegistery extends javax.swing.JFrame {
         OTHERF.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         OTHERF.setText("OTHER");
 
-        EXITB.setBackground(new java.awt.Color(255, 255, 255));
-        EXITB.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        EXITB.setForeground(new java.awt.Color(255, 0, 0));
-        EXITB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assests/exit.png"))); // NOI18N
-        EXITB.setText("BACK");
-        EXITB.addActionListener(new java.awt.event.ActionListener() {
+        BACK.setBackground(new java.awt.Color(255, 255, 255));
+        BACK.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        BACK.setForeground(new java.awt.Color(255, 0, 0));
+        BACK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assests/exit.png"))); // NOI18N
+        BACK.setText("BACK");
+        BACK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EXITBActionPerformed(evt);
+                BACKActionPerformed(evt);
             }
         });
 
@@ -221,9 +221,9 @@ public class AdopteeRegistery extends javax.swing.JFrame {
             .addGroup(MainPAnelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(SEARCHB)
-                .addGap(100, 100, 100)
-                .addComponent(EXITB)
-                .addGap(68, 68, 68))
+                .addGap(26, 26, 26)
+                .addComponent(BACK)
+                .addGap(142, 142, 142))
         );
         MainPAnelLayout.setVerticalGroup(
             MainPAnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,7 +279,7 @@ public class AdopteeRegistery extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(MainPAnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SEARCHB)
-                    .addComponent(EXITB))
+                    .addComponent(BACK))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -298,6 +298,7 @@ public class AdopteeRegistery extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void SEARCHBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SEARCHBActionPerformed
@@ -347,13 +348,13 @@ public class AdopteeRegistery extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_SEARCHBActionPerformed
 
-    private void EXITBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITBActionPerformed
+    private void BACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BACKActionPerformed
         if (JOptionPane.showConfirmDialog(rootPane, "Are You Sure You Want To GO BACK?", "EXIT", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
             DashBoard dash = new DashBoard();
             dash.setVisible(true);
             dispose();
         }
-    }//GEN-LAST:event_EXITBActionPerformed
+    }//GEN-LAST:event_BACKActionPerformed
 
     /**
      * @param args the command line arguments
@@ -393,12 +394,12 @@ public class AdopteeRegistery extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea ADDRESS;
+    private javax.swing.JButton BACK;
     private javax.swing.JTextField CITY;
     private javax.swing.JTextField CONTACT;
     private com.toedter.calendar.JDateChooser DATE;
     private javax.swing.JTextArea DESCRIPTION;
     private javax.swing.JTextField EMAIL;
-    private javax.swing.JButton EXITB;
     private javax.swing.JRadioButton FEMALEF;
     private javax.swing.JTextField ID;
     private javax.swing.JRadioButton MALEF;
