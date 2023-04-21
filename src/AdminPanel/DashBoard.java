@@ -163,7 +163,7 @@ public class DashBoard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void OrphanRegisteryBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrphanRegisteryBActionPerformed
-        AdopteeRegistery res = new AdopteeRegistery();
+        OrphanRegister res = new OrphanRegister();
         res.setVisible(true);
         dispose();
     }//GEN-LAST:event_OrphanRegisteryBActionPerformed
@@ -188,8 +188,8 @@ public class DashBoard extends javax.swing.JFrame {
 
     private void LogoutBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBActionPerformed
          if (JOptionPane.showConfirmDialog(rootPane, "Are You Sure You Want To LOGOUT?", "LOGOUT", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
-            MainMenuInterface menu = new MainMenuInterface();
-            menu.setVisible(true);
+            LoginForm log = new LoginForm();
+            log.setVisible(true);
             dispose();
          }
     }//GEN-LAST:event_LogoutBActionPerformed
@@ -201,7 +201,7 @@ public class DashBoard extends javax.swing.JFrame {
     }//GEN-LAST:event_AdopteDetailsActionPerformed
 
     private void OrphanRegisteryB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrphanRegisteryB1ActionPerformed
-        OrphanRegister res = new OrphanRegister();
+        MainMenuInterface res = new MainMenuInterface();
         res.setVisible(true);
         dispose();
     }//GEN-LAST:event_OrphanRegisteryB1ActionPerformed

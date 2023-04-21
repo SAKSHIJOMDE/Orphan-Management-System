@@ -346,7 +346,7 @@ public class AdopteeRegistery extends javax.swing.JFrame {
     }//GEN-LAST:event_SEARCHBActionPerformed
 
     private void BACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BACKActionPerformed
-        if (JOptionPane.showConfirmDialog(rootPane, "Are You Sure You Want To GO BACK?", "EXIT", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
+        if (JOptionPane.showConfirmDialog(rootPane, "Are You Sure You Want To GO BACK?", "Back to Menu", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
             DashBoard dash = new DashBoard();
             dash.setVisible(true);
             dispose();
