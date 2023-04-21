@@ -1,6 +1,6 @@
 package AdminPanel;
 
-import UserInterface.MainMenu;
+import UserInterface.MainMenuInterface;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -231,7 +231,7 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_RegisterBActionPerformed
 
     private void MainMenuBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainMenuBActionPerformed
-        MainMenu menu = new MainMenu();
+        MainMenuInterface menu = new MainMenuInterface();
         menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_MainMenuBActionPerformed

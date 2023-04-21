@@ -1,6 +1,10 @@
-package UserInterface;
+package Extras;
 
 import AdminPanel.LoginForm;
+import UserInterface.AboutUs;
+import UserInterface.ContactUs;
+import UserInterface.Donation;
+import UserInterface.SupportUs;
 import javax.swing.JOptionPane;
 
 public class MainMenu extends javax.swing.JFrame {

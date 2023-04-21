@@ -1,10 +1,11 @@
 package AdminPanel;
-import UserInterface.MainMenu;
+
+import UserInterface.MainMenuInterface;
 
 public class OrphanManagementSystem {
 
     public static void main(String[] args) {
-        MainMenu menu = new MainMenu();
+        MainMenuInterface menu = new MainMenuInterface();
             menu.setVisible(true);
     }
     

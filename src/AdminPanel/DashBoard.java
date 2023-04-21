@@ -1,6 +1,6 @@
 package AdminPanel;
 
-import UserInterface.MainMenu;
+import UserInterface.MainMenuInterface;
 import DatabaseDetails.AdopteeDView;
 import DatabaseDetails.OrphanDView;
 import javax.swing.JOptionPane;
@@ -188,7 +188,7 @@ public class DashBoard extends javax.swing.JFrame {
 
     private void LogoutBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBActionPerformed
          if (JOptionPane.showConfirmDialog(rootPane, "Are You Sure You Want To LOGOUT?", "LOGOUT", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
-             MainMenu menu = new MainMenu();
+            MainMenuInterface menu = new MainMenuInterface();
             menu.setVisible(true);
             dispose();
          }
@@ -201,8 +201,8 @@ public class DashBoard extends javax.swing.JFrame {
     }//GEN-LAST:event_AdopteDetailsActionPerformed
 
     private void OrphanRegisteryB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrphanRegisteryB1ActionPerformed
-        MainMenu menu = new MainMenu();
-        menu.setVisible(true);
+        OrphanRegister res = new OrphanRegister();
+        res.setVisible(true);
         dispose();
     }//GEN-LAST:event_OrphanRegisteryB1ActionPerformed
 

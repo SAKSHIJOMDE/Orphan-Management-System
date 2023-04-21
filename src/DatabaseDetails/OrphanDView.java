@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -425,7 +426,49 @@ public class OrphanDView extends javax.swing.JFrame {
     }//GEN-LAST:event_UPDATEBMousePressed
 
     private void UPDATEBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UPDATEBActionPerformed
-
+        if (JOptionPane.showConfirmDialog(rootPane, "Are You Sure You Want To UPDATE the Record?", "RECORD UPDATION", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
+            try{
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Orphan","root","Root@123");
+                PreparedStatement stmt = con.prepareStatement("UPDATE Orphan_Details SET NAME = ?, GENDER = ?, DOB = ?, AGE = ?, DESCRIPTION = ?, PY_CHALLENGED = ?, ORPHAN_PARENTS = ?  WHERE ID = " +ID.getText());
+                stmt.setString(1, ONAME.getText());
+                if (MALEF.isSelected() == true) {
+                    stmt.setString(2, MALEF.getText());
+                }
+                if (FEMALEF.isSelected() == true) {
+                    stmt.setString(2, FEMALEF.getText());
+                }
+                if (OTHERF.isSelected() == true) {
+                    stmt.setString(2, OTHERF.getText());
+                }
+                SimpleDateFormat dateF = new SimpleDateFormat("yyyy-MM-dd");
+                String date = dateF.format(DATE.getDate());
+                stmt.setString(3, date);
+                stmt.setString(4,AGE.getText());
+                stmt.setString(5, DES.getText());
+                if (YES.isSelected() == true) {
+                    stmt.setString(6, YES.getText());
+                }
+                if (NO.isSelected() == true) {
+                    stmt.setString(6, NO.getText());
+                }
+                stmt.setString(7,PARENT.getText());
+                stmt.executeUpdate();
+                JOptionPane.showMessageDialog(rootPane,"SUCCESSFULLY DELETED THE RECORD!!");
+                ID.setText(null);
+                ONAME.setText(null);
+                MALEF.setSelected(false);
+                FEMALEF.setSelected(false);
+                OTHERF.setSelected(false);
+                DATE.setDate(null);
+                AGE.setText(null);
+                DES.setText(null);
+                YES.setSelected(false);
+                NO.setSelected(false);
+                PARENT.setText(null);
+            }catch(SQLException sql){
+                JOptionPane.showMessageDialog(rootPane,"NO DATA FOND IN THE RECORDS");
+            }Fetch();
+        }
     }//GEN-LAST:event_UPDATEBActionPerformed
 
     private void DELETEBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DELETEBActionPerformed
@@ -467,7 +510,7 @@ public class OrphanDView extends javax.swing.JFrame {
     }//GEN-LAST:event_REFRESHBActionPerformed
 
     private void CLOSEBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLOSEBActionPerformed
-        if (JOptionPane.showConfirmDialog(rootPane, "Are You Sure You Want To Exit?", "EXIT", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
+        if (JOptionPane.showConfirmDialog(rootPane, "Are You Sure You Want To go BACK?", "GO TO DASHBOARD?", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
             DashBoard dash = new DashBoard();
             dash.setVisible(true);
             dispose();
@@ -520,7 +563,7 @@ public class OrphanDView extends javax.swing.JFrame {
             }
             JOptionPane.showMessageDialog(rootPane, "SEARCH SUCCESSFULLY!!");
         } catch (SQLException sql) {
-            JOptionPane.showMessageDialog(rootPane, sql);
+            JOptionPane.showMessageDialog(rootPane, "No Record Found!!");
         }          
     }//GEN-LAST:event_SEARCHBActionPerformed
 
@@ -552,10 +595,8 @@ public class OrphanDView extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new OrphanDView().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new OrphanDView().setVisible(true);
         });
     }
 
