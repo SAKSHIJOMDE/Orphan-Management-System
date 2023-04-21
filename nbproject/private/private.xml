@@ -2,6 +2,23 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/DATABASE_GENERATION/Orphane_DB.sql</file>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/AdminPanel/DashBoard.java</file>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/AdminPanel/DONATE2.java</file>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/UserInterface/MainMenuInterface.java</file>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/AdminPanel/AdminRegister.java</file>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/DatabaseDetails/AdopteeDView.java</file>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/AdminPanel/LoginForm.java</file>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/AdminPanel/ForgotPass.java</file>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/AdminPanel/OrphanRegister.java</file>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/UserInterface/AboutUs.java</file>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/AdminPanel/AdopteeRegistery.java</file>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/AdminPanel/Donate1.java</file>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/UserInterface/Donation.java</file>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/DatabaseDetails/OrphanDView.java</file>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/AdminPanel/OrphanManagementSystem.java</file>
+            <file>file:/C:/Users/91860/OneDrive/Documents/NetBeansProjects/OrphanManagementSystem/src/UserInterface/ContactUs.java</file>
+        </group>
     </open-files>
 </project-private>
