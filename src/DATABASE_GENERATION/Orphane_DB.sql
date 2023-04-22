@@ -77,3 +77,20 @@ INSERT INTO Orphan.UserCredentials (Fullname, Email, Mobileno, ADDRESS, Auser, P
 VALUES ('Roshan Khandagale','roshan15khandagale@gmail.com','7448255689','Gadge Nagar, Amravati','Admin','admin@123#','admin@123#');
 INSERT INTO Orphan.UserCredentials (Fullname, Email, Mobileno, ADDRESS, Auser, Password, ConfirmPass) 
 VALUES ('Sakshi Jomde', 'sakshijomde2002@gmail.com', '8600195612', 'Dastur Nagar, Amravati', 'Savi', 'password123', 'password123');
+
+CREATE TABLE IF NOT EXISTS Orphan.DONATION (
+    FNAME VARCHAR(50) NOT NULL,
+    LNAME VARCHAR(50) NOT NULL,
+    STREET1 VARCHAR(50) NOT NULL,
+    STREET2 VARCHAR(50),
+    CITY VARCHAR(15) NOT NULL,
+    REGION VARCHAR(15) NOT NULL,
+    ZIPCODE VARCHAR(6) NOT NULL,
+    COUNTRY VARCHAR(20) NOT NULL,
+    PHONE VARCHAR(10) NOT NULL,
+    AMOUNT VARCHAR(6) NOT NULL,
+    FEEDBACK VARCHAR(50) NOT NULL
+);
+INSERT INTO Orphan.DONATION (FNAME, LNAME, STREET1, STREET2, CITY, REGION, ZIPCODE, COUNTRY, PHONE, AMOUNT, FEEDBACK) 
+VALUES("Sakshi", "Jomde", "Near PetrolPump", "Ravi Nagar", "Amravti", "", "220046", "INDIA", "8600195612", "1500", "Thanks for Supporting");
+
