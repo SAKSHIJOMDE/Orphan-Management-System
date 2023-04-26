@@ -2,6 +2,7 @@ package DatabaseDetails;
 
 import AdminPanel.DashBoard;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -16,6 +17,8 @@ public final class AdopteeDView extends javax.swing.JFrame {
     public AdopteeDView() {
         initComponents();
         Fetch();
+        IDGenerate();
+        IDF.setEditable(false);
     }
 
     public void Fetch(){
@@ -28,6 +31,29 @@ public final class AdopteeDView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane,e);
         }
 }
+    
+    private void IDGenerate(){
+        try{
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Orphan","root","Root@123");
+            PreparedStatement pst = conn.prepareStatement("SELECT ID FROM Orphan.Adoptee_details ORDER BY ID DESC LIMIT 1 ");
+            ResultSet rs = pst.executeQuery();
+            if(rs.next()){
+                String num = rs.getString("ID");
+                int numlen = num.length();
+                String txt = num.substring(0, 2);
+                String txt2 = num.substring(2,numlen);
+                int val = Integer.parseInt(txt2);
+                val++;
+                String snum = Integer.toString(val);
+                String ftxt = txt + snum;
+                IDF.setText(ftxt);
+            }else{
+                IDF.setText("1001");
+            }
+        }catch(SQLException sql){
+            JOptionPane.showMessageDialog(rootPane,sql);
+        }
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -73,11 +99,11 @@ public final class AdopteeDView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        MainPanel.setBackground(new java.awt.Color(255, 255, 255));
-        MainPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ADOPTEE DETAILS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Rockwell Condensed", 1, 24))); // NOI18N
+        MainPanel.setBackground(new java.awt.Color(51, 51, 51));
+        MainPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ADOPTEE DETAILS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Rockwell Condensed", 1, 24), new java.awt.Color(0, 255, 0))); // NOI18N
 
-        TablePanel.setBackground(new java.awt.Color(255, 255, 255));
-        TablePanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "AVAILABLE DATA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Monospaced", 1, 24))); // NOI18N
+        TablePanel.setBackground(new java.awt.Color(51, 51, 51));
+        TablePanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "AVAILABLE DATA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Monospaced", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
 
         jTable1.setAutoCreateRowSorter(true);
         jTable1.setBackground(new java.awt.Color(153, 255, 0));
@@ -112,12 +138,14 @@ public final class AdopteeDView extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ID - ");
 
         IDF.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("ADOPTEE NAME");
 
         ANAMEF.setFont(new java.awt.Font("Monospaced", 3, 13)); // NOI18N
@@ -125,6 +153,7 @@ public final class AdopteeDView extends javax.swing.JFrame {
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("ADDRESS");
 
         ADDRESSF.setColumns(20);
@@ -135,10 +164,12 @@ public final class AdopteeDView extends javax.swing.JFrame {
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("DESCRIPTION");
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("ADOPTEE");
 
         DESF.setColumns(20);
@@ -149,15 +180,18 @@ public final class AdopteeDView extends javax.swing.JFrame {
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("DATE OF BIRTH");
 
         DATEF.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel8.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("GENDER");
 
-        MALEF.setBackground(new java.awt.Color(255, 255, 255));
+        MALEF.setBackground(new java.awt.Color(51, 51, 51));
         MALEF.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        MALEF.setForeground(new java.awt.Color(255, 255, 255));
         MALEF.setText("MALE");
         MALEF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,8 +199,9 @@ public final class AdopteeDView extends javax.swing.JFrame {
             }
         });
 
-        FEMALEF.setBackground(new java.awt.Color(255, 255, 255));
+        FEMALEF.setBackground(new java.awt.Color(51, 51, 51));
         FEMALEF.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        FEMALEF.setForeground(new java.awt.Color(255, 255, 255));
         FEMALEF.setText("FEMALE");
         FEMALEF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,8 +209,9 @@ public final class AdopteeDView extends javax.swing.JFrame {
             }
         });
 
-        OTHERF.setBackground(new java.awt.Color(255, 255, 255));
+        OTHERF.setBackground(new java.awt.Color(51, 51, 51));
         OTHERF.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        OTHERF.setForeground(new java.awt.Color(255, 255, 255));
         OTHERF.setText("OTHER");
         OTHERF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,19 +220,27 @@ public final class AdopteeDView extends javax.swing.JFrame {
         });
 
         jLabel9.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("PHONE NUMBER");
 
         jLabel10.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("EMAIL - ID");
 
         PHONEF.setFont(new java.awt.Font("Monospaced", 3, 13)); // NOI18N
         PHONEF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PHONEF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                PHONEFKeyPressed(evt);
+            }
+        });
 
         EMAILF.setFont(new java.awt.Font("Monospaced", 3, 13)); // NOI18N
         EMAILF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel11.setBackground(new java.awt.Color(255, 255, 255));
         jLabel11.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("+ 91");
 
         UPDATEB.setBackground(new java.awt.Color(102, 255, 0));
@@ -251,10 +295,16 @@ public final class AdopteeDView extends javax.swing.JFrame {
         });
 
         jLabel12.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("ZIPCODE");
 
         ZIP.setFont(new java.awt.Font("Monospaced", 3, 13)); // NOI18N
         ZIP.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ZIP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ZIPKeyPressed(evt);
+            }
+        });
 
         CITY.setFont(new java.awt.Font("Monospaced", 3, 13)); // NOI18N
         CITY.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -263,9 +313,11 @@ public final class AdopteeDView extends javax.swing.JFrame {
         OCCUPATION.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel13.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("CITY");
 
         jLabel14.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("OCCUPATION");
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
@@ -571,6 +623,54 @@ public final class AdopteeDView extends javax.swing.JFrame {
             MALEF.setSelected(false);
         }
     }//GEN-LAST:event_OTHERFActionPerformed
+
+    private void ZIPKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ZIPKeyPressed
+        String Phone = ZIP.getText();
+        int Length = Phone.length();
+        char c = evt.getKeyChar();
+        // To check Number 0 to 9
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <='9') {
+            // To check if length is not more than 10
+            if(Length < 6){
+                //is less than 6
+                ZIP.setEditable(true);
+            } else {
+                //else false
+                ZIP.setEditable(false);
+            }
+        } else {
+            //To allow the keys to perform Backspace and Delete for editable mode
+            if (evt.getExtendedKeyCode() == KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode() == KeyEvent.VK_DELETE) {
+                ZIP.setEditable(true);
+            } else {
+                ZIP.setEditable(false);
+            }
+        }
+    }//GEN-LAST:event_ZIPKeyPressed
+
+    private void PHONEFKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PHONEFKeyPressed
+        String Phone = PHONEF.getText();
+        int Length = Phone.length();
+        char c = evt.getKeyChar();
+        // To check Number 0 to 9
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <='9') {
+            // To check if length is not more than 10
+            if(Length < 6){
+                //is less than 6
+                PHONEF.setEditable(true);
+            } else {
+                //else false
+                PHONEF.setEditable(false);
+            }
+        } else {
+            //To allow the keys to perform Backspace and Delete for editable mode
+            if (evt.getExtendedKeyCode() == KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode() == KeyEvent.VK_DELETE) {
+                PHONEF.setEditable(true);
+            } else {
+                PHONEF.setEditable(false);
+            }
+        }
+    }//GEN-LAST:event_PHONEFKeyPressed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

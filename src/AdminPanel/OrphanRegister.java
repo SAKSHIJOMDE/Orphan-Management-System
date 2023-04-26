@@ -6,14 +6,40 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 
 public class OrphanRegister extends javax.swing.JFrame {
 
     public OrphanRegister() {
         initComponents();
+        ID.setEditable(false);
+        IDGenerate();
     }
 
+    private void IDGenerate(){
+        try{
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Orphan","root","Root@123");
+            PreparedStatement pst = conn.prepareStatement("SELECT ID FROM Orphan.Orphan_details ORDER BY ID DESC LIMIT 1 ");
+            ResultSet rs = pst.executeQuery();
+            if(rs.next()){
+                String num = rs.getString("ID");
+                int numlen = num.length();
+                String txt = num.substring(0, 2);
+                String txt2 = num.substring(2,numlen);
+                int val = Integer.parseInt(txt2);
+                val++;
+                String snum = Integer.toString(val);
+                String ftxt = txt + snum;
+                ID.setText(ftxt);
+            }else{
+                ID.setText("1001");
+            }
+        }catch(SQLException sql){
+            JOptionPane.showMessageDialog(rootPane,sql);
+        }
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -45,31 +71,38 @@ public class OrphanRegister extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        MainPAnel.setBackground(new java.awt.Color(255, 255, 255));
-        MainPAnel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ORPHAN REGISTRATION", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Rockwell Condensed", 1, 24))); // NOI18N
+        MainPAnel.setBackground(new java.awt.Color(0, 51, 51));
+        MainPAnel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ORPHAN REGISTRATION", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Rockwell Condensed", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ORPHANE-ID*");
 
         jLabel2.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ORPHANE NAME*");
 
         jLabel3.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("DESCRIPTION*");
 
         jLabel5.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("AGE of ORPHAN*");
 
         jLabel6.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("PHYSICALLY CHALLENGED*");
 
         jLabel7.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("GENDER*");
 
         ID.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         ID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel8.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("ID -");
 
         ONAME.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
@@ -82,8 +115,9 @@ public class OrphanRegister extends javax.swing.JFrame {
         DES.setRows(5);
         jScrollPane1.setViewportView(DES);
 
-        MALEF.setBackground(new java.awt.Color(255, 255, 255));
+        MALEF.setBackground(new java.awt.Color(0, 51, 51));
         MALEF.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        MALEF.setForeground(new java.awt.Color(255, 255, 255));
         MALEF.setText("MALE");
         MALEF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,8 +125,9 @@ public class OrphanRegister extends javax.swing.JFrame {
             }
         });
 
-        FEMALEF.setBackground(new java.awt.Color(255, 255, 255));
+        FEMALEF.setBackground(new java.awt.Color(0, 51, 51));
         FEMALEF.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        FEMALEF.setForeground(new java.awt.Color(255, 255, 255));
         FEMALEF.setText("FEMALE");
         FEMALEF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,8 +135,9 @@ public class OrphanRegister extends javax.swing.JFrame {
             }
         });
 
-        OTHERF.setBackground(new java.awt.Color(255, 255, 255));
+        OTHERF.setBackground(new java.awt.Color(0, 51, 51));
         OTHERF.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        OTHERF.setForeground(new java.awt.Color(255, 255, 255));
         OTHERF.setText("OTHER");
         OTHERF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,13 +172,15 @@ public class OrphanRegister extends javax.swing.JFrame {
         });
 
         jLabel9.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("PARENTs (IF KNOWN)");
 
         PARENT.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         PARENT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        YES.setBackground(new java.awt.Color(255, 255, 255));
+        YES.setBackground(new java.awt.Color(0, 51, 51));
         YES.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        YES.setForeground(new java.awt.Color(255, 255, 255));
         YES.setText("YES");
         YES.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,8 +188,9 @@ public class OrphanRegister extends javax.swing.JFrame {
             }
         });
 
-        NO.setBackground(new java.awt.Color(255, 255, 255));
+        NO.setBackground(new java.awt.Color(0, 51, 51));
         NO.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        NO.setForeground(new java.awt.Color(255, 255, 255));
         NO.setText("NO");
         NO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,6 +199,7 @@ public class OrphanRegister extends javax.swing.JFrame {
         });
 
         jLabel10.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("DATE OF BIRTH");
 
         javax.swing.GroupLayout MainPAnelLayout = new javax.swing.GroupLayout(MainPAnel);

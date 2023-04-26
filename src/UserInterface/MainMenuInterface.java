@@ -34,9 +34,6 @@ public class MainMenuInterface extends javax.swing.JFrame {
         ButtonHide = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         MenuHide = new javax.swing.JPanel();
-        ABOUT = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        AboutUs = new javax.swing.JLabel();
         Contact = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         ContactUs = new javax.swing.JLabel();
@@ -201,49 +198,6 @@ public class MainMenuInterface extends javax.swing.JFrame {
 
         MenuHide.setBackground(new java.awt.Color(35, 55, 60));
 
-        ABOUT.setBackground(new java.awt.Color(54, 70, 78));
-        ABOUT.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ABOUTMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                ABOUTMouseExited(evt);
-            }
-        });
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assests/info.png"))); // NOI18N
-
-        AboutUs.setBackground(new java.awt.Color(54, 70, 78));
-        AboutUs.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        AboutUs.setForeground(new java.awt.Color(255, 255, 255));
-        AboutUs.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        AboutUs.setText("About Us");
-        AboutUs.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AboutUsMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout ABOUTLayout = new javax.swing.GroupLayout(ABOUT);
-        ABOUT.setLayout(ABOUTLayout);
-        ABOUTLayout.setHorizontalGroup(
-            ABOUTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ABOUTLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(AboutUs, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                .addGap(27, 27, 27))
-        );
-        ABOUTLayout.setVerticalGroup(
-            ABOUTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ABOUTLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(AboutUs)
-                .addContainerGap())
-        );
-
         Contact.setBackground(new java.awt.Color(54, 70, 78));
         Contact.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -400,16 +354,15 @@ public class MainMenuInterface extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(DONATIONL, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(DONATIONL, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         DONATIONLayout.setVerticalGroup(
             DONATIONLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(DONATIONLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addContainerGap()
                 .addComponent(DONATIONL)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         EXIT.setBackground(new java.awt.Color(54, 70, 78));
@@ -461,7 +414,6 @@ public class MainMenuInterface extends javax.swing.JFrame {
             .addGroup(MenuHideLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(MenuHideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ABOUT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Contact, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ADMIN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(SUPPORT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -472,9 +424,7 @@ public class MainMenuInterface extends javax.swing.JFrame {
         MenuHideLayout.setVerticalGroup(
             MenuHideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuHideLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(ABOUT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(36, 36, 36)
                 .addComponent(Contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ADMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -482,7 +432,7 @@ public class MainMenuInterface extends javax.swing.JFrame {
                 .addComponent(SUPPORT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(DONATION, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
                 .addComponent(EXIT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
         );
@@ -555,17 +505,11 @@ public class MainMenuInterface extends javax.swing.JFrame {
         hover.setBackground(rand);
     }
     
-    public void changeBColoronEnter(){
-        
-    }
-    
     public void clickMenu(JPanel h1, int numberBool) {
         if (numberBool == 1) {
             h1.setBackground(new Color(25,29,74));
-            //h2.setBackground(new Color(5,10,46));
         } else {
             h1.setBackground(new Color(5,10,46));
-            //h2.setBackground(new Color(25,29,74));
         }
     }
     
@@ -628,12 +572,6 @@ public class MainMenuInterface extends javax.swing.JFrame {
         changeColor(lineMenu, new Color(5,10,46));
     }//GEN-LAST:event_ButtonHideMouseExited
 
-    private void AboutUsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutUsMouseClicked
-        AboutUs about = new AboutUs();
-        about.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_AboutUsMouseClicked
-
     private void ContactUsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ContactUsMouseClicked
         ContactUs contact = new ContactUs();
         contact.setVisible(true);
@@ -663,16 +601,6 @@ public class MainMenuInterface extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_EXITLMouseClicked
-
-    private void ABOUTMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ABOUTMouseEntered
-        ABOUT.setBackground(Color.white);
-        AboutUs.setForeground(Color.BLACK);
-    }//GEN-LAST:event_ABOUTMouseEntered
-
-    private void ABOUTMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ABOUTMouseExited
-        ABOUT.setBackground(new Color(54,70,78));
-        AboutUs.setForeground(Color.white);
-    }//GEN-LAST:event_ABOUTMouseExited
 
     private void ContactMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ContactMouseEntered
         Contact.setBackground(Color.white);
@@ -743,9 +671,7 @@ public class MainMenuInterface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel ABOUT;
     private javax.swing.JPanel ADMIN;
-    private javax.swing.JLabel AboutUs;
     private javax.swing.JLabel AdminLogin;
     private javax.swing.JLabel ButtonHide;
     private javax.swing.JPanel Close;
@@ -773,7 +699,6 @@ public class MainMenuInterface extends javax.swing.JFrame {
     private javax.swing.JLabel close;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

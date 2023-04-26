@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS Orphan.Employee_Details (
 INSERT INTO Orphan.Employee_Details(EMP_NAME, MOBILENO, EMAIL, EMP_ADDRESS, GENDER, DOB) 
 VALUES ('John Doe', '9876543210', 'johndoe@hotmail.com', '123 Main Street, Bangalore, Karnataka', 'Male', '1990-01-01');
 
-CREATE TABLE IF NOT EXISTS Orphan.Doctor_Details (
+/*CREATE TABLE IF NOT EXISTS Orphan.Doctor_Details (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     DNAME VARCHAR(50) NOT NULL,
     MOBILENO VARCHAR(20) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS Orphan.Doctor_Details (
 );
 
 INSERT INTO Orphan.Doctor_Details (DNAME, MOBILENO, D_DEGREE, CLINIC_ADDRESS, DR_DOB, D_EXPERIENCE) 
-VALUES ('Dr. Rajesh Kumar', '9548672131', 'MBBS, MS', '123, ABC Road, Kolkata', '1985-06-25', '10 years experience');
+VALUES ('Dr. Rajesh Kumar', '9548672131', 'MBBS, MS', '123, ABC Road, Kolkata', '1985-06-25', '10 years experience');*/
 
 CREATE TABLE IF NOT EXISTS Orphan.Adoptee_Details (
     ID INT PRIMARY KEY AUTO_INCREMENT,
@@ -91,6 +91,16 @@ CREATE TABLE IF NOT EXISTS Orphan.DONATION (
     AMOUNT VARCHAR(6) NOT NULL,
     FEEDBACK VARCHAR(50) NOT NULL
 );
+
 INSERT INTO Orphan.DONATION (FNAME, LNAME, STREET1, STREET2, CITY, REGION, ZIPCODE, COUNTRY, PHONE, AMOUNT, FEEDBACK) 
 VALUES("Sakshi", "Jomde", "Near PetrolPump", "Ravi Nagar", "Amravti", "", "220046", "INDIA", "8600195612", "1500", "Thanks for Supporting");
 
+CREATE TABLE IF NOT EXISTS Orphan.RecievedMessage (
+    FNAME VARCHAR(15) NOT NULL,
+    LNAME VARCHAR(20) NOT NULL,
+    EMAIL VARCHAR(35) NOT NULL,
+    MESSAGE VARCHAR(100) NOT NULL
+);
+
+INSERT INTO Orphan.RecievedMessage (FNAME, LNAME, EMAIL, MESSAGE) 
+VALUES ("Sakshi", "Jomde", "sakshijomde2002@gmail.com", "I am want a child under 7 age. I am from Goa.");

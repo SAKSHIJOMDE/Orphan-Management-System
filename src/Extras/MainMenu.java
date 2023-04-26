@@ -1,7 +1,6 @@
 package Extras;
 
 import AdminPanel.LoginForm;
-import UserInterface.AboutUs;
 import UserInterface.ContactUs;
 import UserInterface.Donation;
 import UserInterface.SupportUs;
@@ -425,9 +424,7 @@ th.start();
     }//GEN-LAST:event_PUSHOUTMouseClicked
 
     private void AboutUsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutUsMouseClicked
-        AboutUs about = new AboutUs();
-        about.setVisible(true);
-        dispose();
+      
     }//GEN-LAST:event_AboutUsMouseClicked
 
     private void ContactUsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ContactUsMouseClicked

@@ -26,11 +26,12 @@ public class DashBoard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        MianPanel.setBackground(new java.awt.Color(255, 255, 255));
-        MianPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ADMINISTRATORs PANEL", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Rockwell Condensed", 1, 36))); // NOI18N
+        MianPanel.setBackground(new java.awt.Color(0, 51, 51));
+        MianPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ADMINISTRATORs PANEL", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Rockwell Condensed", 1, 36), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        OrphanRegisteryB.setBackground(new java.awt.Color(255, 255, 255));
+        OrphanRegisteryB.setBackground(new java.awt.Color(0, 51, 51));
         OrphanRegisteryB.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        OrphanRegisteryB.setForeground(new java.awt.Color(255, 255, 255));
         OrphanRegisteryB.setText("New Orphan Registery");
         OrphanRegisteryB.setBorder(null);
         OrphanRegisteryB.addActionListener(new java.awt.event.ActionListener() {
@@ -39,8 +40,9 @@ public class DashBoard extends javax.swing.JFrame {
             }
         });
 
-        AdopteeRegisteryB.setBackground(new java.awt.Color(255, 255, 255));
+        AdopteeRegisteryB.setBackground(new java.awt.Color(0, 51, 51));
         AdopteeRegisteryB.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        AdopteeRegisteryB.setForeground(new java.awt.Color(255, 255, 255));
         AdopteeRegisteryB.setText("Adoptee Registery");
         AdopteeRegisteryB.setBorder(null);
         AdopteeRegisteryB.addActionListener(new java.awt.event.ActionListener() {
@@ -49,8 +51,9 @@ public class DashBoard extends javax.swing.JFrame {
             }
         });
 
-        OrphanDetailsB.setBackground(new java.awt.Color(255, 255, 255));
+        OrphanDetailsB.setBackground(new java.awt.Color(0, 51, 51));
         OrphanDetailsB.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        OrphanDetailsB.setForeground(new java.awt.Color(255, 255, 255));
         OrphanDetailsB.setText("Available Orphan Details");
         OrphanDetailsB.setBorder(null);
         OrphanDetailsB.addActionListener(new java.awt.event.ActionListener() {
@@ -59,9 +62,9 @@ public class DashBoard extends javax.swing.JFrame {
             }
         });
 
-        EXITB.setBackground(new java.awt.Color(255, 255, 255));
+        EXITB.setBackground(new java.awt.Color(153, 153, 153));
         EXITB.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        EXITB.setForeground(new java.awt.Color(255, 51, 51));
+        EXITB.setForeground(new java.awt.Color(255, 102, 0));
         EXITB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assests/exit.png"))); // NOI18N
         EXITB.setText("EXIT");
         EXITB.setBorder(null);
@@ -71,8 +74,9 @@ public class DashBoard extends javax.swing.JFrame {
             }
         });
 
-        LogoutB.setBackground(new java.awt.Color(255, 255, 255));
+        LogoutB.setBackground(new java.awt.Color(0, 51, 51));
         LogoutB.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        LogoutB.setForeground(new java.awt.Color(255, 204, 0));
         LogoutB.setText("LOGOUT");
         LogoutB.setBorder(null);
         LogoutB.addActionListener(new java.awt.event.ActionListener() {
@@ -81,8 +85,9 @@ public class DashBoard extends javax.swing.JFrame {
             }
         });
 
-        AdopteDetails.setBackground(new java.awt.Color(255, 255, 255));
+        AdopteDetails.setBackground(new java.awt.Color(0, 51, 51));
         AdopteDetails.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        AdopteDetails.setForeground(new java.awt.Color(255, 255, 255));
         AdopteDetails.setText("Adoptee Details");
         AdopteDetails.setBorder(null);
         AdopteDetails.addActionListener(new java.awt.event.ActionListener() {
@@ -91,8 +96,9 @@ public class DashBoard extends javax.swing.JFrame {
             }
         });
 
-        OrphanRegisteryB1.setBackground(new java.awt.Color(255, 255, 255));
+        OrphanRegisteryB1.setBackground(new java.awt.Color(255, 153, 51));
         OrphanRegisteryB1.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        OrphanRegisteryB1.setForeground(new java.awt.Color(255, 255, 255));
         OrphanRegisteryB1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assests/home.png"))); // NOI18N
         OrphanRegisteryB1.setText("DASHBOARD");
         OrphanRegisteryB1.setBorder(null);
@@ -109,24 +115,23 @@ public class DashBoard extends javax.swing.JFrame {
             .addGroup(MianPanelLayout.createSequentialGroup()
                 .addGroup(MianPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(MianPanelLayout.createSequentialGroup()
-                        .addGroup(MianPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(MianPanelLayout.createSequentialGroup()
-                                .addGap(225, 225, 225)
-                                .addGroup(MianPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(OrphanDetailsB, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(AdopteeRegisteryB, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(OrphanRegisteryB, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(AdopteDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(MianPanelLayout.createSequentialGroup()
-                                .addGap(286, 286, 286)
-                                .addGroup(MianPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(LogoutB, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(EXITB, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 211, Short.MAX_VALUE))
+                        .addGap(143, 143, 143)
+                        .addGroup(MianPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(OrphanDetailsB, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AdopteeRegisteryB, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(OrphanRegisteryB, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AdopteDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 132, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MianPanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(OrphanRegisteryB1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MianPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(MianPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EXITB, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LogoutB, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(207, 207, 207))
         );
         MianPanelLayout.setVerticalGroup(
             MianPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,15 +211,7 @@ public class DashBoard extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_OrphanRegisteryB1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -222,22 +219,12 @@ public class DashBoard extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DashBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DashBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DashBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(DashBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new DashBoard().setVisible(true);
-            }
+        
+        java.awt.EventQueue.invokeLater(() -> {
+            new DashBoard().setVisible(true);
         });
     }
 
