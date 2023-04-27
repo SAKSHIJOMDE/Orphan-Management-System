@@ -14,10 +14,10 @@ public class OrphanRegister extends javax.swing.JFrame {
     public OrphanRegister() {
         initComponents();
         ID.setEditable(false);
-        IDGenerate();
+      //  IDGenerate();
     }
 
-    private void IDGenerate(){
+   /* private void IDGenerate(){
         try{
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Orphan","root","Root@123");
             PreparedStatement pst = conn.prepareStatement("SELECT ID FROM Orphan.Orphan_details ORDER BY ID DESC LIMIT 1 ");
@@ -38,7 +38,7 @@ public class OrphanRegister extends javax.swing.JFrame {
         }catch(SQLException sql){
             JOptionPane.showMessageDialog(rootPane,sql);
         }
-    }
+    }*/
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

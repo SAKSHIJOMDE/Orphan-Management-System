@@ -17,8 +17,8 @@ public final class AdopteeDView extends javax.swing.JFrame {
     public AdopteeDView() {
         initComponents();
         Fetch();
-        IDGenerate();
-        IDF.setEditable(false);
+     //   IDGenerate();
+       // IDF.setEditable(false);
     }
 
     public void Fetch(){
@@ -32,7 +32,7 @@ public final class AdopteeDView extends javax.swing.JFrame {
         }
 }
     
-    private void IDGenerate(){
+   /* private void IDGenerate(){
         try{
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Orphan","root","Root@123");
             PreparedStatement pst = conn.prepareStatement("SELECT ID FROM Orphan.Adoptee_details ORDER BY ID DESC LIMIT 1 ");
@@ -53,7 +53,7 @@ public final class AdopteeDView extends javax.swing.JFrame {
         }catch(SQLException sql){
             JOptionPane.showMessageDialog(rootPane,sql);
         }
-    }
+    }*/
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

@@ -40,7 +40,7 @@ public class ContactUs extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 255, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CONTACT US", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sylfaen", 1, 24), new java.awt.Color(255, 0, 0))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
@@ -55,7 +55,7 @@ public class ContactUs extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 153, 0));
         jLabel3.setText("EMAIL ");
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 102));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 51));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "SEND MESSAGE", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sylfaen", 1, 24), new java.awt.Color(255, 0, 0))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
@@ -80,7 +80,7 @@ public class ContactUs extends javax.swing.JFrame {
 
         LNAME.setFont(new java.awt.Font("Monospaced", 0, 13)); // NOI18N
 
-        RESPONSEB.setBackground(new java.awt.Color(0, 51, 204));
+        RESPONSEB.setBackground(new java.awt.Color(0, 102, 102));
         RESPONSEB.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         RESPONSEB.setForeground(new java.awt.Color(255, 255, 255));
         RESPONSEB.setText("SEND RESPONSE ");
