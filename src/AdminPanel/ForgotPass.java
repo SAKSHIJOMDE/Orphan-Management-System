@@ -1,6 +1,7 @@
 package AdminPanel;
 
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -52,6 +53,11 @@ public class ForgotPass extends javax.swing.JFrame {
         jLabel4.setText("+ 91");
 
         Phone.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        Phone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                PhoneKeyPressed(evt);
+            }
+        });
 
         ShowPass.setBackground(new java.awt.Color(255, 51, 51));
         ShowPass.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
@@ -164,6 +170,7 @@ public class ForgotPass extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ShowPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowPassActionPerformed
@@ -204,9 +211,30 @@ public class ForgotPass extends javax.swing.JFrame {
         SUBMIT.setBackground(new Color(255,153,102));
     }//GEN-LAST:event_SUBMITMouseExited
 
-    /**
-     * @param args the command line arguments
-     */
+    private void PhoneKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PhoneKeyPressed
+        String Ph = Phone.getText();
+        int Length = Ph.length();
+        char c = evt.getKeyChar();
+        // To check Number 0 to 9
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <='9') {
+            // To check if length is not more than 10
+            if(Length < 10){
+                //is less than 10
+                Phone.setEditable(true);
+            } else {
+                //else false
+                Phone.setEditable(false);
+            }
+        } else {
+            //To allow the keys to perform Backspace and Delete for editable mode
+            if (evt.getExtendedKeyCode() == KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode() == KeyEvent.VK_DELETE) {
+                Phone.setEditable(true);
+            } else {
+                Phone.setEditable(false);
+            }
+        }
+    }//GEN-LAST:event_PhoneKeyPressed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

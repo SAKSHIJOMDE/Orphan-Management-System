@@ -49,6 +49,9 @@ public class MainMenuInterface extends javax.swing.JFrame {
         EXIT = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         EXITL = new javax.swing.JLabel();
+        aboutP = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        ABOUTL = new javax.swing.JLabel();
         Dashboard = new javax.swing.JPanel();
         ORPHANLOGO = new javax.swing.JLabel();
         TITLE1 = new javax.swing.JLabel();
@@ -407,6 +410,48 @@ public class MainMenuInterface extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        aboutP.setBackground(new java.awt.Color(54, 70, 78));
+        aboutP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                aboutPMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                aboutPMouseExited(evt);
+            }
+        });
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assests/info.png"))); // NOI18N
+
+        ABOUTL.setBackground(new java.awt.Color(54, 70, 78));
+        ABOUTL.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        ABOUTL.setForeground(new java.awt.Color(255, 255, 255));
+        ABOUTL.setText("ABOUT US");
+        ABOUTL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ABOUTLMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout aboutPLayout = new javax.swing.GroupLayout(aboutP);
+        aboutP.setLayout(aboutPLayout);
+        aboutPLayout.setHorizontalGroup(
+            aboutPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(aboutPLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ABOUTL, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        aboutPLayout.setVerticalGroup(
+            aboutPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(aboutPLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ABOUTL)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout MenuHideLayout = new javax.swing.GroupLayout(MenuHide);
         MenuHide.setLayout(MenuHideLayout);
         MenuHideLayout.setHorizontalGroup(
@@ -418,7 +463,8 @@ public class MainMenuInterface extends javax.swing.JFrame {
                     .addComponent(ADMIN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(SUPPORT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(DONATION, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(EXIT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(EXIT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(aboutP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         MenuHideLayout.setVerticalGroup(
@@ -432,7 +478,9 @@ public class MainMenuInterface extends javax.swing.JFrame {
                 .addComponent(SUPPORT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(DONATION, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(aboutP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                 .addComponent(EXIT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
         );
@@ -585,7 +633,7 @@ public class MainMenuInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_AdminLoginMouseClicked
 
     private void SUPPORTLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SUPPORTLMouseClicked
-        SupportUs support = new SupportUs();
+        SUPPORT support = new SUPPORT();
         support.setVisible(true);
         dispose();
     }//GEN-LAST:event_SUPPORTLMouseClicked
@@ -652,6 +700,22 @@ public class MainMenuInterface extends javax.swing.JFrame {
         EXITL.setForeground(Color.white);
     }//GEN-LAST:event_EXITMouseExited
 
+    private void ABOUTLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ABOUTLMouseClicked
+        ABOUTUS about = new ABOUTUS();
+        about.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_ABOUTLMouseClicked
+
+    private void aboutPMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutPMouseEntered
+        aboutP.setBackground(Color.white);
+        ABOUTL.setForeground(Color.BLACK);
+    }//GEN-LAST:event_aboutPMouseEntered
+
+    private void aboutPMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutPMouseExited
+        aboutP.setBackground(new Color(54,70,78));
+        ABOUTL.setForeground(Color.white);
+    }//GEN-LAST:event_aboutPMouseExited
+
 
     public static void main(String args[]) {
        
@@ -671,6 +735,7 @@ public class MainMenuInterface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ABOUTL;
     private javax.swing.JPanel ADMIN;
     private javax.swing.JLabel AdminLogin;
     private javax.swing.JLabel ButtonHide;
@@ -696,10 +761,12 @@ public class MainMenuInterface extends javax.swing.JFrame {
     private javax.swing.JLabel TITLE1;
     private javax.swing.JLabel TITLE2;
     private javax.swing.JLabel TITLE4;
+    private javax.swing.JPanel aboutP;
     private javax.swing.JLabel close;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;

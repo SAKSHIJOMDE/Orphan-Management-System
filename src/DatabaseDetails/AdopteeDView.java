@@ -655,8 +655,8 @@ public final class AdopteeDView extends javax.swing.JFrame {
         // To check Number 0 to 9
         if(evt.getKeyChar() >= '0' && evt.getKeyChar() <='9') {
             // To check if length is not more than 10
-            if(Length < 6){
-                //is less than 6
+            if(Length < 10){
+                //is less than 10
                 PHONEF.setEditable(true);
             } else {
                 //else false
