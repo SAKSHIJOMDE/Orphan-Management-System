@@ -13,7 +13,7 @@ public class OrphanRegister extends javax.swing.JFrame {
 
     public OrphanRegister() {
         initComponents();
-        ID.setEditable(false);
+        ID.setEditable(true);
       //  IDGenerate();
     }
 

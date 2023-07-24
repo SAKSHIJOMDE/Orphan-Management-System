@@ -4,42 +4,17 @@ import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
 public class AdopteeRegistery extends javax.swing.JFrame {
 
-    public AdopteeRegistery() {
-        initComponents();
-        //ID.setEditable(false);
-        //IDGenerate();
+       public AdopteeRegistery() {
+     initComponents();
+        
     }
 
-   /* private void IDGenerate(){
-        try{
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Orphan","root","Root@123");
-            PreparedStatement pst = conn.prepareStatement("SELECT ID FROM Orphan.Orphan_details ORDER BY ID DESC LIMIT 1 ");
-            ResultSet rs = pst.executeQuery();
-            if(rs.next()){
-                String num = rs.getString("ID");
-                int numlen = num.length();
-                String txt = num.substring(0, 2);
-                String txt2 = num.substring(2,numlen);
-                int val = Integer.parseInt(txt2);
-                val++;
-                String snum = Integer.toString(val);
-                String ftxt = txt + snum;
-                ID.setText(ftxt);
-            }else{
-                ID.setText("1001");
-            }
-        }catch(SQLException sql){
-            JOptionPane.showMessageDialog(rootPane,sql);
-        }
-    }*/
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

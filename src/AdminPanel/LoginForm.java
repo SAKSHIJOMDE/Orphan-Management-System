@@ -35,9 +35,10 @@ public class LoginForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        MainPanel.setBackground(new java.awt.Color(255, 255, 255));
+        MainPanel.setBackground(new java.awt.Color(0, 153, 153));
         MainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        MainMenuB.setBackground(new java.awt.Color(255, 204, 0));
         MainMenuB.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         MainMenuB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assests/home.png"))); // NOI18N
         MainMenuB.setText("Menu");
@@ -48,7 +49,7 @@ public class LoginForm extends javax.swing.JFrame {
         });
         MainPanel.add(MainMenuB, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, -1));
 
-        OrphanPanel.setBackground(new java.awt.Color(255, 255, 255));
+        OrphanPanel.setBackground(new java.awt.Color(0, 153, 153));
         OrphanPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ORPHAN MANAGEMENT", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Rockwell Condensed", 1, 36))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Rockwell Condensed", 1, 24)); // NOI18N
@@ -64,6 +65,7 @@ public class LoginForm extends javax.swing.JFrame {
 
         Pass.setFont(new java.awt.Font("Goudy Old Style", 1, 18)); // NOI18N
 
+        LoginB.setBackground(new java.awt.Color(255, 255, 153));
         LoginB.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         LoginB.setText("LOGIN");
         LoginB.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +74,7 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
 
-        RegisterB.setBackground(new java.awt.Color(255, 255, 255));
+        RegisterB.setBackground(new java.awt.Color(204, 204, 204));
         RegisterB.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         RegisterB.setForeground(new java.awt.Color(0, 51, 255));
         RegisterB.setText("Register");
@@ -86,7 +88,7 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jLabel4.setText("Didn't have Account?");
 
-        ForgotPassB.setBackground(new java.awt.Color(255, 255, 255));
+        ForgotPassB.setBackground(new java.awt.Color(204, 204, 204));
         ForgotPassB.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         ForgotPassB.setForeground(new java.awt.Color(255, 51, 51));
         ForgotPassB.setText("Forgot Password?");
@@ -97,7 +99,7 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
 
-        ExitB.setBackground(new java.awt.Color(255, 255, 255));
+        ExitB.setBackground(new java.awt.Color(255, 204, 51));
         ExitB.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         ExitB.setForeground(new java.awt.Color(255, 0, 0));
         ExitB.setText("EXIT");
@@ -107,7 +109,7 @@ public class LoginForm extends javax.swing.JFrame {
             }
         });
 
-        ShowPass.setBackground(new java.awt.Color(255, 255, 255));
+        ShowPass.setBackground(new java.awt.Color(204, 204, 204));
         ShowPass.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
         ShowPass.setText("Show Password");
         ShowPass.addActionListener(new java.awt.event.ActionListener() {
@@ -123,10 +125,16 @@ public class LoginForm extends javax.swing.JFrame {
             .addGroup(OrphanPanelLayout.createSequentialGroup()
                 .addGroup(OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(OrphanPanelLayout.createSequentialGroup()
-                        .addGap(197, 197, 197)
-                        .addComponent(ForgotPassB, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ExitB))
+                        .addGap(167, 167, 167)
+                        .addGroup(OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PassL)
+                            .addComponent(UserL))
+                        .addGap(18, 18, 18)
+                        .addGroup(OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Pass, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addComponent(ShowPass, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE))
                     .addGroup(OrphanPanelLayout.createSequentialGroup()
                         .addGroup(OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(OrphanPanelLayout.createSequentialGroup()
@@ -138,51 +146,42 @@ public class LoginForm extends javax.swing.JFrame {
                                     .addComponent(LoginB)
                                     .addComponent(jLabel4))
                                 .addGap(4, 4, 4)
-                                .addComponent(RegisterB))
-                            .addGroup(OrphanPanelLayout.createSequentialGroup()
-                                .addGap(133, 133, 133)
-                                .addGroup(OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(UserL)
-                                    .addComponent(PassL))
-                                .addGap(72, 72, 72)
-                                .addGroup(OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(OrphanPanelLayout.createSequentialGroup()
-                                        .addComponent(Pass, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(ShowPass, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)))))
-                        .addGap(26, 26, 26)))
-                .addContainerGap())
+                                .addComponent(RegisterB)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(6, 6, 6))
+            .addGroup(OrphanPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ForgotPassB, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(148, 148, 148)
+                .addComponent(ExitB)
+                .addGap(27, 27, 27))
         );
         OrphanPanelLayout.setVerticalGroup(
             OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(OrphanPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(32, 32, 32)
-                .addGroup(OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(OrphanPanelLayout.createSequentialGroup()
-                        .addGroup(OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(UserL)
-                            .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(PassL))
+                .addGap(33, 33, 33)
+                .addGroup(OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UserL))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(PassL)
                         .addComponent(ShowPass)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(24, 24, 24)
                 .addComponent(LoginB)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(RegisterB))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ForgotPassB)
-                .addContainerGap(19, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OrphanPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ExitB)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addGroup(OrphanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ExitB)
+                    .addComponent(ForgotPassB))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         MainPanel.add(OrphanPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 650, 310));
